@@ -17,6 +17,22 @@ class Game {
   }
 
   registerEvents() {
+    let counter = 0;
+    document.addEventListener('keydown', (e) => {
+      let symbol = this.wordElement.querySelectorAll('.symbol')
+      if(e.key.toUpperCase() === symbol[counter].textContent.toUpperCase()){
+        this.success()
+        ++counter
+      }else {
+        this.fail()
+        counter = 0
+      
+      }
+      if (counter >= symbol.length){
+        counter = 0
+      }
+    })
+
     /*
       TODO:
       Написать обработчик события, который откликается
