@@ -3,7 +3,7 @@ const form = document.getElementById("tasks__form")
 form.addEventListener('submit', function (e) {
     e.preventDefault()
     let text = input.value;
-    if (text) {
+    if (text.trim()) {
         input.value = ""
         let title = document.createElement('div')
         title.classList.add("task__title")
